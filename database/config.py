@@ -22,8 +22,3 @@ class Database:
         exist = self.users.find({},userD)
         if(exist):
             self.users.delete_one(userD)
-            
-
-obj = Database()
-obj.insertNewUser('SuzuCudzi','test@test.com')
-obj.getAll()
