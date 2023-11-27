@@ -6,8 +6,8 @@ class Database:
         self.db_email = self.conn["emails"]
         self.users = self.db_email["users"]
         
-    def getAll(self):
-        print(self.conn.list_database_names())
+    def getAllEmails(self):
+        print(self.users.distinct('email'))
         
     def insertNewUser(self, name, mail):
         exist = self.users.count_documents({'email':mail})
