@@ -10,9 +10,9 @@ def cli():
     pass
 
 @click.command()
-@click.option('--mail', help="Enter your email with 2 factor athentication")
-@click.option('--password', help="You need to get a Google 2 factor authentication code")
-def changeConfig(mail,password):
+@click.option('--mail', prompt="Iput your email",help="Enter your email with 2 factor athentication")
+@click.option('--password', prompt="Iput your password", help="You need to get a Google 2 factor authentication code")
+def config(mail,password):
         
         if(mail):
             try:
@@ -61,7 +61,7 @@ def send(subject,message):
                     mail = userConfig[0]
                     password = userConfig[1]
     except:
-        print('Must config. To config run `changeconfig --help`')
+        print('Must config. To config run `config --help`')
         return
     
     msg = MIMEText(message)
@@ -77,7 +77,7 @@ def send(subject,message):
     print("Message has been sent!")
 
 
-cli.add_command(changeConfig)
+cli.add_command(config)
 cli.add_command(addUser)
 cli.add_command(deleteUser)
 cli.add_command(send)
