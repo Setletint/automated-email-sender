@@ -61,7 +61,7 @@ def send(subject,message):
                     mail = userConfig[0]
                     password = userConfig[1]
     except:
-        print('Must config. To config run `python main.py changeconfig`')
+        print('Must config. To config run `changeconfig --help`')
         return
     
     msg = MIMEText(message)

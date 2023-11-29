@@ -1,4 +1,7 @@
 *.txt
 *.pyc
+*.spec
+/build/
+/dist/
 /venv/
 setup.py
