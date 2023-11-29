@@ -1,7 +1,6 @@
 import click
 import smtplib
 from email.mime.text import MIMEText
-from array import array
 import sys
 sys.path.insert(0,"..")
 from database.config import Database
