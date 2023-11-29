@@ -8,7 +8,7 @@ class Database:
 
         
     def getAllEmails(self):
-        print(self.users.distinct('email'))
+        return self.users.distinct('email')
         
     def insertNewUser(self,name,mail):
         exist = self.users.count_documents({'email':mail})
